@@ -1,0 +1,184 @@
+/* Snygg och mjuk bakgrund på hela sidan */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #edf4ff 0%, #fdf5f8 90%);
+    margin: 0;
+    color: #223046;
+}
+
+/* Snyggare header med skugga och mjuk kant */
+header {
+    background: linear-gradient(90deg, #2066be 50%, #57b4dd 100%);
+    color: #fff;
+    padding: 2.4rem 0 1.1rem 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 2px 22px #2066be35;
+}
+header h1 {
+    margin: 0 0 0.3rem 0;
+    font-size: 2.8rem;
+    letter-spacing: -1.3px;
+    font-weight: bold;
+    text-shadow: 0 2px 6px #2053994c;
+}
+header .subtitle {
+    font-size: 1.16rem;
+    opacity: 0.96;
+    margin-bottom: 0.7rem;
+}
+.icon { font-size: 1.28em; vertical-align: middle;}
+
+/* Huvudområde för komponenter (centrerat och luftigt) */
+main {
+    max-width: 1200px;
+    margin: 1.8rem auto 0 auto;
+    padding: 0 1.2rem;
+}
+
+/* Grid för alla kort i snygga kolumner */
+/* Viktigt: hindra korten från att sträckas i höjd */
+.component-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 1.5rem;
+    align-items: start; /* <-- så korten inte får lika höjd */
+}
+
+/* Varje komponentkort med extra färg och skugga */
+.component-card {
+    background: #fff;
+    border-radius: 26px;
+    box-shadow: 0 6px 28px #2066be10;
+    position: relative;
+    padding: 1rem 1.3rem 1.1rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transition: box-shadow 0.18s, transform 0.18s, border 0.18s;
+    border-top: 8px solid #eaf6fb; /* Basfärg, byts ut nedan */
+    align-self: start; /* <-- säkerställer varje korts egna höjd */
+}
+.component-card:hover {
+    box-shadow: 0 16px 64px #2066be2c;
+    transform: scale(1.023);
+    z-index: 2;
+    border-top-width: 12px;
+}
+.component-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 2px 17px #2066be13;
+    margin-bottom: 0.6rem;
+}
+
+/* Extra färg på varje typ av kort */
+.accent1 { border-top: 8px solid #44ade1;   }
+.accent2 { border-top: 8px solid #4fd68e;   }
+.accent3 { border-top: 8px solid #f8c24b;   }
+.accent4 { border-top: 8px solid #ef6360;   }
+.accent5 { border-top: 8px solid #a486e8;   }
+.accent6 { border-top: 8px solid #94e86d;   }
+.accent7 { border-top: 8px solid #80d3ea;   }
+
+.component-card h2 {
+    color: #2066be;
+    margin-top: 6px;
+    margin-bottom: 0.18em;
+    font-size: 1.45rem;
+    text-align: left;
+    font-weight: 600;
+}
+.short-desc {
+    font-size: 1.09em;
+    color: #4183b8;
+    font-style: italic;
+    margin-bottom: 0.48em;
+    text-align: left;
+    letter-spacing: 0.4px;
+}
+.component-card ul {
+    padding-left: 1.3rem;
+    color: #386491;
+    margin: 0 0 0.62rem 0;
+    font-size: 1.09em;
+}
+.component-card ul li { margin-bottom: 0.21em;}
+
+/* Knappstil */
+.more-btn {
+    background: linear-gradient(90deg, #2066be 60%, #44ade1 100%);
+    color: #fff;
+    border: none;
+    padding: 0.47em 1.1em;
+    border-radius: 11px;
+    font-size: 1.12em;
+    cursor: pointer;
+    margin-bottom: 0.4em;
+    font-weight: bold;
+    align-self: flex-end;
+    box-shadow: 0 2px 8px #2066be20;
+    transition: background 0.17s, box-shadow 0.17s;
+}
+.more-btn:hover, .more-btn:focus {
+    background: linear-gradient(90deg, #44ade1 70%, #2066be 100%);
+    box-shadow: 0 6px 25px #2066be1a;
+}
+
+/* Mer-info: använda max-height för mjuk öppning/stängning */
+.more-info {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 1.02em;
+    color: #285488;
+    background: #eaf7fb;
+    border-radius: 11px;
+    margin-top: 8px;
+    padding: 0 1em; /* padding-top/bottom kontrolleras vid aktiv klass */
+    box-shadow: 0 2px 12px #2066be18;
+    transition: max-height 0.32s ease, padding 0.32s ease;
+    border: 1px solid transparent;
+}
+.more-info p { margin: 0.9em 0; }
+
+/* När aktiv: ge padding och max-height så innehållet syns */
+.more-info.active {
+    max-height: 400px; /* tillräckligt stort för innehållet; justera vid behov */
+    padding: 0.72em 1em;
+    border-color: #d6f0fb;
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Snyggare footer */
+footer {
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(90deg, #2066be 50%, #5ecfa7 100%);
+    padding: 16px 0 19px 0;
+    margin-top: 40px;
+    font-size: 1.15rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    letter-spacing: 0.7px;
+    box-shadow: 0 -3px 16px #2066be29;
+}
+
+/* Mobilanpassning */
+@media(max-width:900px) {
+    main { max-width: 100%; padding: 0 0.6rem;}
+    .component-card { padding: 1rem; }
+    .component-card img { height: 100px;}
+    header h1 { font-size: 2rem;}
+}
+@media(max-width:600px) {
+    .component-grid { grid-template-columns: 1fr; }
+    main { padding: 0 0.2rem;}
+    .component-card { margin-bottom: 0.50rem;}
+    header h1 { font-size: 1.3rem;}
+    footer { font-size: 1rem; padding: 10px;}
+}

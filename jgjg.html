@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Datorns delar – Superenkelt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Designfilen, se till att znzn.css finns -->
+    <link rel="stylesheet" href="znzn.css">
+</head>
+<body>
+    <!-- Rubrik och kort text -->
+    <header>
+        <h1>🖥️ Datorns delar – Superenkelt!</h1>
+        <p class="subtitle">
+            Här lär du dig enkelt hur datorn funkar. Tryck på "Läs mer" för förklaring!
+        </p>
+    </header>
+    <main>
+        <!-- Kort för varje datordel -->
+        <section class="component-grid">
+            <!-- Processor -->
+            <article class="component-card accent1">
+                <img src="images/intel.jpg" alt="Processor">
+                <h2>Processor</h2>
+                <p class="short-desc">Processorn är datorns hjärna. Den räknar allt!</p>
+                <ul>
+                    <li><b>Jobbar åt hela datorn.</b></li>
+                    <li><b>Fler kärnor = snabbare multitasking.</b></li>
+                    <li><b>Måste passa i rätt plats ("socket") på moderkortet.</b></li>
+                </ul>
+                <button class="more-btn" data-target="cpu" aria-expanded="false">Läs mer</button>
+                <div id="cpu" class="more-info" aria-hidden="true">
+                    <p>Processorn räknar och bestämmer allt.<br>
+Om du vill spela eller göra många saker samtidigt, satsa på många "kärnor". Se till att den passar i moderkortet!</p>
+                </div>
+            </article>
+
+            <!-- RAM-minne -->
+            <article class="component-card accent2">
+                <img src="images/ram.jpg" alt="RAM-minne">
+                <h2>RAM-minne</h2>
+                <p class="short-desc">RAM är som ett skrivbord. Mer RAM – fler saker kan vara öppna!</p>
+                <ul>
+                    <li><b>Håller igång det du gör för stunden.</b></li>
+                    <li><b>Ju mer RAM, desto fler program samtidigt.</b></li>
+                    <li><b>RAM töms när datorn stängs av.</b></li>
+                </ul>
+                <button class="more-btn" data-target="ram" aria-expanded="false">Läs mer</button>
+                <div id="ram" class="more-info" aria-hidden="true">
+                    <p>RAM lagrar sådant du använder just nu, t.ex. internet och spel. Sätts direkt på moderkortet.</p>
+                </div>
+            </article>
+
+            <!-- Grafikkort -->
+            <article class="component-card accent3">
+                <img src="images/grafik.jpg" alt="Grafikkort">
+                <h2>Grafikkort</h2>
+                <p class="short-desc">Grafikkortet visar bilder och spel på skärmen.</p>
+                <ul>
+                    <li><b>Gör att bilder och film fungerar.</b></li>
+                    <li><b>Viktigt om du spelar spel!</b></li>
+                    <li><b>Sätts fast på moderkortet.</b></li>
+                </ul>
+                <button class="more-btn" data-target="gpu" aria-expanded="false">Läs mer</button>
+                <div id="gpu" class="more-info" aria-hidden="true">
+                    <p>Bättre grafikkort = snyggare och snabbare spel. Viktigt om du gillar film, spel och grafiskt arbete.</p>
+                </div>
+            </article>
+
+            <!-- Lagring (SSD/HDD) -->
+            <article class="component-card accent4">
+                <img src="images/ssd.jpg" alt="Lagring">
+                <h2>Lagring</h2>
+                <p class="short-desc">Här sparas bilder, spel och program.</p>
+                <ul>
+                    <li><b>SSD är snabb, HDD är billig och stor.</b></li>
+                    <li><b>Du kan ha båda för bästa resultat.</b></li>
+                    <li><b>Allt sparas här tills du tar bort det.</b></li>
+                </ul>
+                <button class="more-btn" data-target="storage" aria-expanded="false">Läs mer</button>
+                <div id="storage" class="more-info" aria-hidden="true">
+                    <p>SSD startar upp allt snabbt, HDD ger stor lagringsplats. Sätts in i lådan, kopplas till moderkortet.</p>
+                </div>
+            </article>
+
+            <!-- Moderkort -->
+            <article class="component-card accent5">
+                <img src="images/moderkort.jpg" alt="Moderkort">
+                <h2>Moderkort</h2>
+                <p class="short-desc">Moderkortet fäster allt, som vägarna i datorn.</p>
+                <ul>
+                    <li><b>Alla delar sätts fast här.</b></li>
+                    <li><b>Kolla så allt passar innan du köper!</b></li>
+                    <li><b>Kopplar ihop alla sladdar och kablar.</b></li>
+                </ul>
+                <button class="more-btn" data-target="mb" aria-expanded="false">Läs mer</button>
+                <div id="mb" class="more-info" aria-hidden="true">
+                    <p>Moderkortet håller ihop allt och bestämmer vilka delar som passar. Viktigt att välja rätt.</p>
+                </div>
+            </article>
+
+            <!-- Nätaggregat -->
+            <article class="component-card accent6">
+                <img src="images/psu.jpg" alt="Nätaggregat">
+                <h2>Nätaggregat</h2>
+                <p class="short-desc">Nätaggregatet ger ström till hela datorn.</p>
+                <ul>
+                    <li><b>Ger el till alla delar.</b></li>
+                    <li><b>Ha tillräckligt med "watt".</b></li>
+                    <li><b>Kablar går härifrån till resten av datorn.</b></li>
+                </ul>
+                <button class="more-btn" data-target="psu" aria-expanded="false">Läs mer</button>
+                <div id="psu" class="more-info" aria-hidden="true">
+                    <p>Utan nätaggregat funkar ingenting! Rätt mängd kraft så allt orkar.</p>
+                </div>
+            </article>
+
+            <!-- Kylning -->
+            <article class="component-card accent7">
+                <img src="images/kylning.jpg" alt="Kylning">
+                <h2>Kylning</h2>
+                <p class="short-desc">Kylning håller datorn sval och glad.</p>
+                <ul>
+                    <li><b>Fläkt eller vatten kan kyla.</b></li>
+                    <li><b>Bra kylning = längre liv för datorn.</b></li>
+                    <li><b>Monteras på processorn eller grafikkortet.</b></li>
+                </ul>
+                <button class="more-btn" data-target="cooler" aria-expanded="false">Läs mer</button>
+                <div id="cooler" class="more-info" aria-hidden="true">
+                    <p>Fläktar eller vattenkylningssystem hindrar att datorn blir för varm. Extra viktigt om du spelar eller jobbar hårt.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- Sidfot -->
+    <footer>
+        <p>&copy; 2025 Datorinfo</p>
+    </footer>
+
+    <!-- Koppla in den externa JavaScript-filen (samma mapp) -->
+    <script src="zuzu.js"></script>
+</body>
+</html>
